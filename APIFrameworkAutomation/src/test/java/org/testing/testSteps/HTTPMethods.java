@@ -24,10 +24,7 @@ public class HTTPMethods
 	public void postrequest(String urikey,String requestbodyData) 
 	{
 		String urivalue=pr.getProperty(urikey);
-		
-
-		Response res=
-				
+		Response res=		
 		given()
 		.contentType(ContentType.JSON)
 		.body(requestbodyData)
@@ -35,12 +32,23 @@ public class HTTPMethods
 		.post(urivalue);
 		
 		System.out.println("Status code is "+res.statusCode());
+		
+		
+			
+	}
 	
+	public void getallrequest(String urikey) 
+	{
+		String urivalue=pr.getProperty(urikey);
+		Response res=		
+		given()
+		.contentType(ContentType.JSON)
+		.when()
+		.get(urivalue);
 		
-		
-		
-		
-		
+		System.out.println("Status code is "+res.statusCode());
+		System.out.println("Response data is");
+		System.out.println(res.asString());
 		
 	}
 	
