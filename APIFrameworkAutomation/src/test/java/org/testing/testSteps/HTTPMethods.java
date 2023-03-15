@@ -21,7 +21,7 @@ public class HTTPMethods
 		
 	}
 	
-	public void postrequest(String urikey,String requestbodyData) 
+	public Response postrequest(String urikey,String requestbodyData) 
 	{
 		String urivalue=pr.getProperty(urikey);
 		Response res=		
@@ -33,7 +33,7 @@ public class HTTPMethods
 		
 		System.out.println("Status code is "+res.statusCode());
 		
-		
+		return res;
 			
 	}
 	
@@ -52,5 +52,39 @@ public class HTTPMethods
 		
 	}
 	
+	public void getrequest(String urikey,String idvalue) 
+	{
+		String urivalue=pr.getProperty(urikey)+ "/" +idvalue;
+		Response res=		
+		given()
+		.contentType(ContentType.JSON)
+		.when()
+		.get(urivalue);
+		
+		System.out.println("Status code is "+res.statusCode());
+		System.out.println("Response data is");
+		System.out.println(res.asString());
+		
+	}
+	
+	
+	public void Putrequest(String urikey,String requestbodyData,String idvalue) 
+	{
+		String urivalue=pr.getProperty(urikey)+"/"+idvalue;
+		Response res=		
+		given()
+		.contentType(ContentType.JSON)
+		.body(requestbodyData)
+		.when()
+		.put(urivalue);
+		
+		System.out.println("Status code is "+res.statusCode());
+		System.out.println("After update response the data");
+		System.out.println(res.asString());
+		
+			
+	}
+	
+	
+	}
 
-}
