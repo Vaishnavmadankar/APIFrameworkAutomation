@@ -85,6 +85,19 @@ public class HTTPMethods
 			
 	}
 	
+	public void deleterequest(String urikey,String idvalue) 
+	{
+		String urivalue=pr.getProperty(urikey)+ "/" +idvalue;
+		Response res=		
+		given()
+		.contentType(ContentType.JSON)
+		.when()
+		.delete(urivalue);
+		
+		System.out.println("Status code is "+res.statusCode());
+		
+		
+	}
 	
 	}
 

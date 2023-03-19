@@ -9,20 +9,18 @@ import org.testing.utilities.JsonFileHandler;
 import org.testing.utilities.PropertiesFileHandler;
 import org.testng.annotations.Test;
 
-public class TC4_Putrequest 
+public class TC9_Putrequest1 
 {
 	@Test
-  public  void testcase4() throws IOException 
-  {
-	  
-	  Properties pr=PropertiesFileHandler.loadproperties("../APIFrameworkAutomation/URI.Properties");
+ public void testcase9() throws IOException 
+ {
+	 Properties pr=PropertiesFileHandler.loadproperties("../APIFrameworkAutomation/URI.Properties");
 	  String Requestbody=JsonFileHandler.loadjsonData("../APIFrameworkAutomation/src/test/java/org/testing/resources/RequestDataPut.json");
 	  Requestbody=JSONReplacement.replaceVariable(Requestbody, "id",TC1_PostRequest.returnidvalue);
 	  
 	  HTTPMethods http=new HTTPMethods(pr);
 	  
-	  http.Putrequest("QA_URI",Requestbody,TC1_PostRequest.returnidvalue);
-	  
-  }	
+	  http.Putrequest("QA_URI",Requestbody,TC6_Postrequest1.returnidvalue); 
+ }
 
 }

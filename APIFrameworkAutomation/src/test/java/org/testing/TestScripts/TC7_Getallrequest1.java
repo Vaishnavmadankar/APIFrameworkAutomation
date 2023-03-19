@@ -7,15 +7,13 @@ import org.testing.testSteps.HTTPMethods;
 import org.testing.utilities.PropertiesFileHandler;
 import org.testng.annotations.Test;
 
-public class TC2_Getallrequest 
+public class TC7_Getallrequest1 
 {
 	@Test
-	public void testcase2() throws IOException 
-	{
-
-		Properties pr=PropertiesFileHandler.loadproperties("../APIFrameworkAutomation/URI.Properties");
+   public void testcase7() throws IOException 
+   {
+	   Properties pr=PropertiesFileHandler.loadproperties("../APIFrameworkAutomation/URI.Properties");
 		HTTPMethods http=new HTTPMethods(pr);
-		http.getallrequest("QA_URI");
-		
-	}
+		http.getallrequest("QA_URI");   
+   }
 }

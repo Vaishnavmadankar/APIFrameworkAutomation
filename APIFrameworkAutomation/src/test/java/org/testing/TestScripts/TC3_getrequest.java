@@ -5,10 +5,13 @@ import java.util.Properties;
 
 import org.testing.testSteps.HTTPMethods;
 import org.testing.utilities.PropertiesFileHandler;
+import org.testng.annotations.Test;
 
-public class TC3_getrequest {
-	
-	public void testcase3() throws IOException {
+public class TC3_getrequest 
+{
+	@Test
+	public void testcase3() throws IOException 
+	{
 		
 	
 		Properties pr=PropertiesFileHandler.loadproperties("../APIFrameworkAutomation/URI.Properties");

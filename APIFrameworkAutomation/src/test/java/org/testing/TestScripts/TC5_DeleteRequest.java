@@ -7,15 +7,16 @@ import org.testing.testSteps.HTTPMethods;
 import org.testing.utilities.PropertiesFileHandler;
 import org.testng.annotations.Test;
 
-public class TC2_Getallrequest 
+public class TC5_DeleteRequest 
 {
 	@Test
-	public void testcase2() throws IOException 
+	public void testcase5() throws IOException 
 	{
-
+	
 		Properties pr=PropertiesFileHandler.loadproperties("../APIFrameworkAutomation/URI.Properties");
 		HTTPMethods http=new HTTPMethods(pr);
-		http.getallrequest("QA_URI");
+		http.deleterequest("QA_URI", TC1_PostRequest.returnidvalue);
 		
 	}
+
 }
