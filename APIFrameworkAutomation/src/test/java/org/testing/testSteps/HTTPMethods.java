@@ -37,7 +37,7 @@ public class HTTPMethods
 			
 	}
 	
-	public void getallrequest(String urikey) 
+	public Response getallrequest(String urikey) 
 	{
 		String urivalue=pr.getProperty(urikey);
 		Response res=		
@@ -49,10 +49,10 @@ public class HTTPMethods
 		System.out.println("Status code is "+res.statusCode());
 		System.out.println("Response data is");
 		System.out.println(res.asString());
-		
+		return res;
 	}
 	
-	public void getrequest(String urikey,String idvalue) 
+	public Response getrequest(String urikey,String idvalue) 
 	{
 		String urivalue=pr.getProperty(urikey)+ "/" +idvalue;
 		Response res=		
@@ -64,11 +64,12 @@ public class HTTPMethods
 		System.out.println("Status code is "+res.statusCode());
 		System.out.println("Response data is");
 		System.out.println(res.asString());
+		return res;
 		
 	}
 	
 	
-	public void Putrequest(String urikey,String requestbodyData,String idvalue) 
+	public Response Putrequest(String urikey,String requestbodyData,String idvalue) 
 	{
 		String urivalue=pr.getProperty(urikey)+"/"+idvalue;
 		Response res=		
@@ -82,10 +83,12 @@ public class HTTPMethods
 		System.out.println("After update response the data");
 		System.out.println(res.asString());
 		
+		return res;
+		
 			
 	}
 	
-	public void deleterequest(String urikey,String idvalue) 
+	public Response deleterequest(String urikey,String idvalue) 
 	{
 		String urivalue=pr.getProperty(urikey)+ "/" +idvalue;
 		Response res=		
@@ -95,7 +98,7 @@ public class HTTPMethods
 		.delete(urivalue);
 		
 		System.out.println("Status code is "+res.statusCode());
-		
+		return res;
 		
 	}
 	
