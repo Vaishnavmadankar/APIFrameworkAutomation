@@ -10,9 +10,10 @@ import java.util.Properties;
 // Input -- file path //
 //Output -- Properties Object //
 
-public class PropertiesFileHandler {
-
-	public static Properties loadproperties(String filePath) throws IOException {
+public class PropertiesFileHandler 
+{
+	public static Properties loadproperties(String filePath) throws IOException 
+	{
 		File F=new File(filePath);
 		FileReader FR=new FileReader(F);
 		Properties pr=new Properties();

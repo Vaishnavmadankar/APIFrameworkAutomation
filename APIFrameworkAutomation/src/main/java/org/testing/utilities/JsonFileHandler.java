@@ -22,8 +22,6 @@ public class JsonFileHandler
   		JSONTokener Js=new JSONTokener(FR);
   		JSONObject Obj=new JSONObject(Js);
   		return Obj.toString();
-  		
-  		
-    	  
+  	 
       }
 }
